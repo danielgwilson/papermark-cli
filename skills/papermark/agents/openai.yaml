@@ -1,0 +1,7 @@
+interface:
+  display_name: "Papermark"
+  short_description: "Inspect Papermark datarooms and analytics."
+  default_prompt: "Use $papermark to inspect datarooms, folders, viewers, views, and export-visits jobs."
+
+policy:
+  allow_implicit_invocation: true
