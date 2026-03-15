@@ -22,6 +22,7 @@ When published:
 ```bash
 npm i -g papermark-cli
 papermark --help
+npx -y papermark-cli --help
 ```
 
 Local:

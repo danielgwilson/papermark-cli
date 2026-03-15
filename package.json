@@ -1,6 +1,6 @@
 {
   "name": "papermark-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Agent-first CLI + skill for Papermark dataroom workflows",
   "license": "MIT",
   "author": "Daniel G Wilson",
@@ -14,7 +14,8 @@
     "url": "https://github.com/danielgwilson/papermark-cli/issues"
   },
   "bin": {
-    "papermark": "dist/cli.js"
+    "papermark": "dist/cli.js",
+    "papermark-cli": "dist/cli.js"
   },
   "files": [
     "dist",
