@@ -13,6 +13,7 @@ Default stance:
 - Prefer `--json` for machine use.
 - Stay read-first unless the CLI explicitly supports a mutation.
 - Model dataroom contents through folder traversal, not just top-level documents.
+- If `papermark` is missing from `PATH`, install the published CLI with `npm i -g papermark-cli`. If global npm install is unavailable, install from a local checkout with `npm link`.
 
 ## Default workflow
 
@@ -29,6 +30,15 @@ Default stance:
 - Inspect viewers: `papermark datarooms viewers <id> --json`
 - Inspect room stats: `papermark datarooms stats <id> --json`
 - Inspect export jobs: `papermark datarooms export-visits <id> --json`
+
+## Worked example
+
+If the user asks "show me the analytics and folder structure for the investor dataroom":
+
+1. Run `papermark datarooms list --json`
+2. Pick the matching dataroom id from `data.datarooms`
+3. Run `papermark datarooms folders <id> --json` for the content tree
+4. Run `papermark datarooms views <id> --json`, `papermark datarooms viewers <id> --json`, or `papermark datarooms stats <id> --json` depending on the level of analytics detail needed
 
 ## Auth
 
@@ -49,6 +59,21 @@ Treat dataroom, analytics, links, groups, and viewer output as sensitive workspa
 - Dataroom content is folder-first.
 - `export-visits` currently inspects export jobs and does not yet start them.
 
-## Contract
+## Contract essentials
 
-Stable JSON behavior is documented in `docs/CONTRACT_V1.md`.
+- Prefer `--json` for agent work.
+- With `--json`, stdout should contain exactly one JSON object.
+- Progress and status belong on stderr.
+- Exit codes:
+  - `0` success
+  - `1` request failure, upstream failure, or failed checks
+  - `2` auth/user action required or invalid input
+- Common error codes:
+  - `AUTH_MISSING`
+  - `AUTH_INVALID`
+  - `NOT_FOUND`
+  - `RATE_LIMITED`
+  - `UPSTREAM_5XX`
+  - `TIMEOUT`
+  - `VALIDATION`
+  - `CHECK_FAILED`
