@@ -1,0 +1,12 @@
+title = "papermark-cli gitleaks overrides"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "google-stitch-api-key"
+description = "Detected a possible Google Stitch API key."
+regex = '''\b(AQ\.[A-Za-z0-9._-]{20,})\b'''
+secretGroup = 1
+entropy = 3
+keywords = ["AQ."]
