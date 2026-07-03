@@ -1,6 +1,6 @@
 ---
 name: papermark
-description: Use this skill whenever you need to inspect Papermark datarooms via the agent-first `papermark` CLI. Triggers include listing datarooms, inspecting one dataroom, reading folder structures, checking links, groups, permission groups, viewers, views, stats, or export-visits jobs.
+description: Use this skill whenever you need to inspect Papermark datarooms via the agent-first `papermark` CLI. Triggers include listing datarooms, inspecting one dataroom, reading folder structures, checking links, groups, permission groups, viewers, views, stats, or existing export-visits jobs.
 ---
 
 # Papermark (agent-first CLI)
@@ -29,7 +29,7 @@ Default stance:
 - Inspect analytics summary counts: `papermark datarooms views-count <id> --json`
 - Inspect viewers: `papermark datarooms viewers <id> --json`
 - Inspect room stats: `papermark datarooms stats <id> --json`
-- Inspect export jobs: `papermark datarooms export-visits <id> --json`
+- Inspect existing export jobs: `papermark datarooms export-visits <id> --json`
 
 ## Worked example
 
@@ -57,7 +57,7 @@ Treat dataroom, analytics, links, groups, and viewer output as sensitive workspa
 
 - This adapter targets a private authenticated surface, not a documented public management API.
 - Dataroom content is folder-first.
-- `export-visits` currently inspects export jobs and does not yet start them.
+- `export-visits` is read-only: it inspects existing export jobs and does not create or start a new export.
 
 ## Contract essentials
 

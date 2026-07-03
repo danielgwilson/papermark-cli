@@ -1,7 +1,10 @@
 interface:
   display_name: "Papermark"
   short_description: "Inspect Papermark datarooms and analytics."
-  default_prompt: "Use $papermark to inspect datarooms, folders, viewers, views, and export-visits jobs."
+  icon_small: "./assets/papermark-small.svg"
+  icon_large: "./assets/papermark.svg"
+  brand_color: "#334155"
+  default_prompt: "Use $papermark to inspect Papermark datarooms, folders, links, access groups, viewers, views, stats, and existing export-visits jobs."
 
 policy:
   allow_implicit_invocation: true

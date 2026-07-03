@@ -76,4 +76,4 @@ Current v1 coverage:
 - The CLI depends on an authenticated Papermark browser session or stored session token.
 - The CLI currently models dataroom contents via the folder route rather than the top-level documents route.
 - `datarooms folders` returns a limited summarized view by default; `--limit` widens it and `--raw` returns the full nested payload.
-- `export-visits` currently inspects existing export jobs and does not yet trigger new exports.
+- `export-visits` is read-only: it inspects existing export jobs and does not create or start a new export.
