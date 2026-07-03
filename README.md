@@ -24,6 +24,12 @@ npm i -g papermark-cli
 papermark --help
 ```
 
+Install the agent skill:
+
+```bash
+npx -y skills add -g danielgwilson/papermark-cli --skill papermark
+```
+
 Local:
 
 ```bash
