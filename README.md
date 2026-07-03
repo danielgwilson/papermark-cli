@@ -13,7 +13,7 @@ Current v0.1 scope:
 - dataroom views/viewers
 - dataroom views-count
 - dataroom stats
-- dataroom export job inspection
+- existing dataroom export job inspection
 
 ## Install
 
@@ -88,7 +88,7 @@ papermark datarooms views <id> --json
 papermark datarooms views-count <id> --json
 papermark datarooms viewers <id> --json
 papermark datarooms stats <id> --json
-papermark datarooms export-visits <id> --json
+papermark datarooms export-visits <id> --json  # inspect existing export jobs
 ```
 
 ## Design notes
@@ -98,7 +98,7 @@ papermark datarooms export-visits <id> --json
 - A typical flow is: `datarooms list`, pick the dataroom id you need, then follow with `get`, `folders`, and analytics/access commands.
 - `datarooms folders` returns a limited summary by default. Use `--limit` to widen the summary or `--raw` for the full nested tree.
 - `doctor` proves auth, team resolution, and dataroom listing. It is a fast sanity check, not a full sweep of every route.
-- `export-visits` currently inspects existing export jobs via a GET route. Triggering new export jobs can be added later if the hosted behavior proves stable enough.
+- `export-visits` is read-only: it inspects existing export jobs via a GET route. It does not create or start a new export.
 - Runtime outputs can contain sensitive dataroom structure, analytics, access-control, and viewer information. Treat command output as private workspace data.
 
 ## Contract

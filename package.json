@@ -38,10 +38,12 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "npm run typecheck",
     "lint:public-surface": "node scripts/public-surface-check.mjs",
+    "secret-sweep": "bash scripts/secret-sweep.sh",
+    "check:release": "npm run typecheck && npm test && npm run lint:public-surface && npm run secret-sweep",
     "pretest": "npm run build",
     "test": "tsx --test",
     "start": "node dist/cli.js",
-    "prepublishOnly": "npm run lint && npm run lint:public-surface && npm test",
+    "prepublishOnly": "npm run check:release",
     "prepare": "npm run build"
   },
   "dependencies": {
